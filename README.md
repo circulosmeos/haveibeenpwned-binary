@@ -31,6 +31,11 @@ If you prefer to have verbose output to screen, just change "VERBOSE = 0" to "VE
 		Searching in: pwned-passwords-1.0.bin
 		Found: 'doors' as 0183EC9633DE16663259AD61FDC1D0F4CC363D6A
 
+Attributions
+============
+
+*pwned-pass-binary-fast.py* is based on [a gist by alexanderzobnin](https://gist.github.com/alexanderzobnin/09db0c9f74754d32d3c2538d4d6a3b0d).
+
 License
 =======
 
