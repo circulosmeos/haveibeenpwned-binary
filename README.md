@@ -34,7 +34,7 @@ If you prefer to have verbose output to screen, just change "VERBOSE = 0" to "VE
 Attributions
 ============
 
-*pwned-pass-binary-fast.py* is based on [a gist by alexanderzobnin](https://gist.github.com/alexanderzobnin/09db0c9f74754d32d3c2538d4d6a3b0d).
+*pwned-pass-binary-fast.py* is based on [pwned-pass-fast.py by alexanderzobnin](https://gist.github.com/alexanderzobnin/09db0c9f74754d32d3c2538d4d6a3b0d).
 
 License
 =======
