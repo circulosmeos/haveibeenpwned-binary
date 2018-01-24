@@ -1,4 +1,6 @@
 Convert [haveibeenpwned.com Pwned Passwords](https://haveibeenpwned.com/Passwords) 7z files to binary form, **saving space** but still being able to **quickly search inside them**.
+
+Check [my blog entry for this project](https://circulosmeos.wordpress.com/2018/01/24/checking-passwords-against-size-reduced-haveibeenpwned-com-hashes-files/) for a step-by-step guide.
   
 Conversion
 ==========
