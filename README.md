@@ -1,13 +1,15 @@
 Convert [haveibeenpwned.com Pwned Passwords](https://haveibeenpwned.com/Passwords) 7z files to binary form, **saving space** but still being able to **quickly search inside them**.
 
 Check [my blog entry for this project](https://circulosmeos.wordpress.com/2018/01/24/checking-passwords-against-size-reduced-haveibeenpwned-com-hashes-files/) for a step-by-step guide.
-  
+
+Both scripts are compatible with Python 2 (checked with 2.7) and Python 3 (checked with 3.6).
+
 Conversion
 ==========
 
-Convert the 7z files to binary form, using Python 3:
+Convert the 7z files to binary form, using Python:
     
-     $ python3 pwned-compact-to-binary.py    
+     $ python pwned-compact-to-binary.py    
 
 New files with extension .bin and almost the same size of the .7z ones will be created.   
 Bear in mind that the conversion process can take a while, even though the 7z extraction is done to memory — not to disk. But *it must be done just once*.
@@ -15,18 +17,18 @@ Bear in mind that the conversion process can take a while, even though the 7z ex
 Use
 ===
 
-Now you can check your passwords from another program just checking the output of Python 2 *pwned-pass-binary-fast.py*
+Now you can check your passwords from another program just checking the output of *pwned-pass-binary-fast.py*
     
-	$ python2 pwned-pass-binary-fast.py doors
+	$ python pwned-pass-binary-fast.py doors
 	$ echo $?
 		0
-	$ python2 pwned-pass-binary-fast.py HardPasswordNotYetPawned
+	$ python pwned-pass-binary-fast.py HardPasswordNotYetPawned
 	$ echo $?
 		1
 
 If you prefer to have verbose output to screen, just change "VERBOSE = 0" to "VERBOSE = 1" in the code.
 
-	$ python2 pwned-pass-binary-fast.py doors
+	$ python pwned-pass-binary-fast.py doors
 		Searching for SHA1 hash: 0183EC9633DE16663259AD61FDC1D0F4CC363D6A
 		Searching in: pwned-passwords-update-1.bin
 		Searching in: pwned-passwords-update-2.bin

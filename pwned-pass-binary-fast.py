@@ -1,4 +1,5 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
+# Compatible with Python 2 & Python 3
 #
 # Search in haveibeenpwned.com hashes password db.
 # Based on https://gist.github.com/alexanderzobnin/09db0c9f74754d32d3c2538d4d6a3b0d
@@ -9,7 +10,7 @@
 #   returns 0 when password is found/compromised, 1 otherwise.
 # Plain text password is provided as parameter
 #
-# v1.0 by circulosmeos, Jan 2018
+# v1.1 by circulosmeos, Jan 2018
 # https://github.com/circulosmeos/haveibeenpwned-binary
 # licensed under GPLv3 or higher
 #
@@ -17,11 +18,12 @@
 import os
 import hashlib
 import sys
+import binascii
 
 pwned_passwords_files = [
-  "pwned-passwords-update-1.bin",
-  "pwned-passwords-update-2.bin",
-  "pwned-passwords-1.0.bin"
+  'pwned-passwords-update-1.bin',
+  'pwned-passwords-update-2.bin',
+  'pwned-passwords-1.0.bin'
 ]
 
 HASH_LENGTH = 20; # in bytes
@@ -52,11 +54,11 @@ def searchForPass(password):
         current_pos = int ((pos_to + pos_from) / 2)
 
         file.seek(current_pos * HASH_LENGTH)
-        pwned_hash = file.read( HASH_LENGTH ).encode('hex').upper()
+        pwned_hash = binascii.hexlify( bytearray( file.read( HASH_LENGTH ) ) ).upper().decode('utf-8')
         if (VERBOSE>1): print("Go to %s hash position #%s" % (pwned_hash, current_pos))
 
         if pwned_hash == pass_hash:
-          if (VERBOSE>0): print("Found: '%s' as %s" % (password, pwned_hash))
+          if (VERBOSE>0): print("Found: '%s' as %s" % (password.decode('utf-8'), pwned_hash))
           return 0
 
         if abs(pos_to - pos_from) < 1:
@@ -76,5 +78,5 @@ def searchForPass(password):
 
 if ( len(sys.argv[1])>0 ):
   exit ( # cmdline return value: 0 TRUE (password compromised), 1 FALSE (password not compromised)
-    searchForPass( sys.argv[1] ) 
+    searchForPass( sys.argv[1].encode('utf-8') ) 
     )
