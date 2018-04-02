@@ -35,6 +35,11 @@ If you prefer to have verbose output to screen, just change "VERBOSE = 0" to "VE
 		Searching in: pwned-passwords-1.0.bin
 		Found: 'doors' as 0183EC9633DE16663259AD61FDC1D0F4CC363D6A
 
+Windows users
+=============
+
+Please note that in order to use the last version of haveibeenpwned password files, which have a size of about 9 GiB, you need to use a Python compiled for 64 bits. (The situation can be more complex (the requirement is LFS support) but hopefully that will suffice).
+
 Attributions
 ============
 
