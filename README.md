@@ -7,7 +7,7 @@ Both scripts are compatible with Python 2 (checked with 2.7) and Python 3 (check
 Conversion
 ==========
 
-Convert the 7z files to binary form, using Python:
+Convert the 7z file to binary form, using Python:
     
      $ python pwned-compact-to-binary.py    
 
